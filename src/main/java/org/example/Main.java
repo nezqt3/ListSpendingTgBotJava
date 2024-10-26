@@ -8,8 +8,11 @@ import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 public class Main {
 
 	public static void main(String[] args) throws TelegramApiException, IOException {
+
+		DummyServer.startServer();
+
 		TelegramBot telegramBot = new TelegramBot();
-		final TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
+		TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
 		telegramBotsApi.registerBot(telegramBot);
 	}
 }
